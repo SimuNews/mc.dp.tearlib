@@ -57,6 +57,7 @@ class LoadFile extends Widget {
             TextComponent("Reload successful. Restored old config"),
           ])
         ],
+        assignTag: Entity.Player(),
       ),
     ]);
   }

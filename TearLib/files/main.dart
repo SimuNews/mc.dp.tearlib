@@ -24,10 +24,10 @@ class MainFile extends Widget {
 
       Execute(
         as: Entity.All(),
-        If: Condition.score(
+        unless: Condition.score(
           Score.fromSelected(
             SCORE_TEAR_ID,
-          ).isSmallerOrEqual(
+          ).isBigger(
             Score.con(0),
           ),
         ),

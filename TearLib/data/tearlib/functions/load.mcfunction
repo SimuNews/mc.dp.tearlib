@@ -518,8 +518,8 @@ scoreboard players set #498 objd_consts 498
 scoreboard players set #499 objd_consts 499
 scoreboard players set #500 objd_consts 500
 # Check if it is a clean installation
-execute if score #TearLibID TearId > #0 objd_consts run tag @s add objd_isTrue
-execute if entity @s[tag=objd_isTrue] run tellraw @a [{"text":"[TearLib]: [Info] ","color":"green"},{"text":"Reload successful. Restored old config"}]
-execute unless entity @s[tag=objd_isTrue] run scoreboard players set #TearLibID TearId 1
-execute unless entity @s[tag=objd_isTrue] run tellraw @a [{"text":"[TearLib]: [Info] ","color":"green"},{"text":"Installation successful. Configured for first use!"}]
-tag @s remove objd_isTrue
+execute if score #TearLibID TearId > #0 objd_consts run tag @p add objd_isTrue
+execute as @p if entity @s[tag=objd_isTrue] run tellraw @a [{"text":"[TearLib]: [Info] ","color":"green"},{"text":"Reload successful. Restored old config"}]
+execute as @p unless entity @s[tag=objd_isTrue] run scoreboard players set #TearLibID TearId 1
+execute as @p unless entity @s[tag=objd_isTrue] run tellraw @a [{"text":"[TearLib]: [Info] ","color":"green"},{"text":"Installation successful. Configured for first use!"}]
+tag @p remove objd_isTrue
