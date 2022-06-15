@@ -8,7 +8,8 @@ void main(List<String> args) {
       Project(
         name: 'TearLib',
         description: 'A library that need some datapacks to run',
-        target: "../", // path for where to generate the project
+        target:
+            "C:/Users/SimuNews/AppData/Roaming/.minecraft/saves/New World/datapacks/", // path for where to generate the project
         generate: TearLibPack(), // The starting point of generation
         version: 19, // The version of the project
       ),

@@ -39,7 +39,9 @@ class MainFile extends Widget {
             REG_TEAR_ID.add(1),
           ], groupMin: 0),
         ],
-      )
+      ),
+
+      Command("function " + context.packId + ":playerevents"),
     ]);
   }
 }

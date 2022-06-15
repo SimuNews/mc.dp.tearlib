@@ -1,5 +1,6 @@
 import 'package:objd/core.dart';
 // import all the files:
+import '../files/events/playerevents.dart';
 import '../files/load.dart';
 import '../files/main.dart';
 
@@ -10,16 +11,19 @@ class TearLibPack extends Widget {
   @override
   Widget generate(Context context) {
     return Pack(
-        name: 'tearlib', // name of the subpack
-        main: File(
-            // definining a file that runs every tick
-            'main',
-            child: MainFile()),
-        load: File(
-            // definining a file that runs on reload
-            'load',
-            child: LoadFile()),
-        modules: [],
-        files: []);
+      name: 'tearlib', // name of the subpack
+      main: File(
+          // definining a file that runs every tick
+          'main',
+          child: MainFile()),
+      load: File(
+          // definining a file that runs on reload
+          'load',
+          child: LoadFile()),
+      modules: [],
+      files: [
+        File("playerevents", child: PlayerEvents()),
+      ],
+    );
   }
 }
