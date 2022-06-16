@@ -10,9 +10,15 @@ class LoadFile extends Widget {
   static const String TAG_TEARLIB = "TearLib";
   static const String TAG_TEAR_ID = TAG_TEARLIB + "_ID";
 
-  static Score REG_TEAR_ID =
-      Score(Entity.PlayerName("#TearLibID"), SCORE_TEAR_ID);
+  static Score REG_TEAR_ID = Score(
+    Entity.PlayerName("#TearLibID"),
+    SCORE_TEAR_ID,
+  );
   static Score REG_CONST_ZERO = Score.con(0);
+  static Score REG_LOG_LEVEL = Score(
+    Entity.PlayerName("#TearLibConfig"),
+    "TearLibLogLevel",
+  );
 
   @override
   Widget generate(Context context) {
@@ -38,6 +44,7 @@ class LoadFile extends Widget {
         "TearLib",
       ), // show other dp taht uses TearLib that its installed
       Scoreboard(SCORE_TEAR_ID), // give every player a unique id
+      Scoreboard("TearLibLogLevel"),
 
       Comment("Check if it is a clean installation"),
 
@@ -48,6 +55,7 @@ class LoadFile extends Widget {
         ),
         orElse: [
           REG_TEAR_ID.set(1),
+          REG_LOG_LEVEL.set(1),
           Logging.info([
             TextComponent("Installation successful. Configured for first use!"),
           ])

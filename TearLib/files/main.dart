@@ -8,8 +8,10 @@ class MainFile extends Widget {
   static const String TAG_TEARLIB = "TearLib";
   static const String TAG_TEAR_ID = TAG_TEARLIB + "_ID";
 
-  static Score REG_TEAR_ID =
-      Score(Entity.PlayerName("#TearLibID"), SCORE_TEAR_ID);
+  static Score REG_TEAR_ID = Score(
+    Entity.PlayerName("#TearLibID"),
+    SCORE_TEAR_ID,
+  );
 
   @override
   Widget generate(Context context) {
